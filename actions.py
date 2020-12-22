@@ -1,6 +1,7 @@
 # File Containg Required Method/Function for todo.py
-
+# from actions import help_cmd, add, list_todo, delete_todo, done_todo, report
 import os
+import sys
 from os import path
 from datetime import date
 
@@ -8,13 +9,14 @@ from datetime import date
 
 
 def help_cmd():
-    print("Usage :-")
-    print("$ ./todo add \"todo item\"  # Add a new todo")
-    print('$ ./todo ls               # Show remaining todos')
-    print('$ ./todo del NUMBER       # Delete a todo')
-    print('$ ./todo done NUMBER      # Complete a todo')
-    print('$ ./todo help             # Show usage')
-    print('$ ./todo report           # Statistics')
+    usage="""Usage :-
+$ ./todo add "todo item"  # Add a new todo
+$ ./todo ls               # Show remaining todos
+$ ./todo del NUMBER       # Delete a todo
+$ ./todo done NUMBER      # Complete a todo
+$ ./todo help             # Show usage
+$ ./todo report           # Statistics"""
+    sys.stdout.buffer.write(usage.encode('utf8')) # Printing using UTF-8, using print() directly giving unwated symbols as result
 
 # 2 Adding New Todo -- ./todo add arg1 arg2
 
@@ -44,7 +46,8 @@ def list_todo():
         index_inverse = number_of_lines
         # loop for printing all todo exists in todo.txt
         for i in range(1, number_of_lines + 1):
-            print("[" + str(index_inverse) + "] " + final_list[i])
+            current_todo = "[" + str(index_inverse) + "] " + final_list[i] + "\n"
+            sys.stdout.buffer.write(current_todo.encode('utf8')) # Printing using UTF-8, using print() directly giving unwated symbols as result
             index_inverse -= 1
         todo_file.close
     else:
