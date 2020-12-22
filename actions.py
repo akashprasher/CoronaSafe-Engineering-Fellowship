@@ -4,7 +4,7 @@ import os
 from os import path
 from datetime import date
 
-# 1 - Function Help - Show Commands
+# 1 - Function Help - Show Commands -- ./todo help
 
 
 def help_cmd():
@@ -50,7 +50,7 @@ def list_todo():
     else:
         print('There are no pending todos!')  # error
 
-# 4 Delete Todo
+# 4 Delete Todo -- ./todo del arg1 ...
 
 
 def delete_todo(del_number):
@@ -75,7 +75,7 @@ def delete_todo(del_number):
         print('Error: todo #' + str(del_number) +
               ' does not exist. Nothing deleted.')  # error
 
-# 5 Done todo and shifting to done.txt from todo.txt
+# 5 Done todo and shifting to done.txt from todo.txt -- ./todo done arg1 ...
 
 
 def done_todo(done_number):
@@ -106,7 +106,7 @@ def done_todo(done_number):
     else:
         print('Error: todo #' + str(done_number) + ' does not exist.')  # error
 
-# 6 Telly Report
+# 6 Telly Report -- ./todo report
 
 
 def report():
