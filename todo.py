@@ -1,7 +1,7 @@
 # importing sys for getting argument
 import sys
 # Importing Function/Method Required from ./actions.py[required to run this file]
-from actions import help_cmd, add, list_todo, delete_todo, done_todo, report
+from todo-actions import help_cmd, add, list_todo, delete_todo, done_todo, report
 
 # checking number of arguments
 length_argument = len(sys.argv)
