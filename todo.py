@@ -16,8 +16,7 @@ $ ./todo del NUMBER       # Delete a todo
 $ ./todo done NUMBER      # Complete a todo
 $ ./todo help             # Show usage
 $ ./todo report           # Statistics"""
-    sys.stdout.buffer.write(usage.encode(
-        'utf8'))  # Printing using UTF-8, using print() directly giving unwated symbols as result
+    sys.stdout.buffer.write(usage.encode('utf8'))  # Printing using UTF-8, using print() directly giving unwated symbols as result
 
 # 2 Adding New Todo -- ./todo add arg1 arg2
 
